@@ -1,0 +1,19 @@
+const express= require('express');
+const mongoose= require('mongoose');
+const bodyParser= require('body-parser'); 
+const PORT = 8000 || env.port;
+
+//Connecting to db
+const DB_URL = 'mongodb+srv://cosmin0123:oxzJe52XtyO7hghR@jokescluster-oqxyy.mongodb.net/Yoda-App?retryWrites=true&w=majority'; 
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useUnifiedTopology', true);
+mongoose.connect(DB_URL, err => { if(err) console.log(err) })
+
+//Starting app with express
+const app = express();
+app.use(bodyParser.json());
+const appRoutes = require('./routes/yodaJokesRoutes.js')(app)
+app.listen(PORT, ()=>{
+	console.log(`server is listening on port:${PORT}`)
+}) 
+  
