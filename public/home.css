@@ -2,3 +2,36 @@ p {
     background-color: red;
     color: yellow;
 }
+
+#yoda {
+    padding-left: 5em;
+}
+
+#head {
+    height: 5rem;
+    width: 14rem; 
+    display: block;
+    position: relative; 
+    z-index: 999;
+    animation: move 2s linear infinite;
+}
+
+#body {
+    height: 5rem;
+    width: 5rem; 
+    position: relative; 
+    left: 4.5em;
+}
+ 
+
+@keyframes move {
+    0% {
+        top: 1.25rem;
+    }
+    50% {
+        top: 2rem;
+    }
+    100% {
+        top: 1.25rem;
+    }
+}
