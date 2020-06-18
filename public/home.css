@@ -1,37 +1,53 @@
+:root{
+    --yoda_head_height: 8rem;
+    --yoda_head_width: 16rem;
+    --yoda_offset_body: 4rem;
+    --yoda_offset_mic: 9rem;
+}
+
 p {
     background-color: red;
     color: yellow;
 }
 
 #yoda {
-    padding-left: 5em;
+    padding-left: 5em; 
 }
 
 #head {
-    height: 5rem;
-    width: 14rem; 
+    height: var(--yoda_head_height);
+    width: var(--yoda_head_width);
     display: block;
     position: relative; 
-    z-index: 999;
-    animation: move 2s linear infinite;
+    z-index: 998;
+    animation: move 1.25s linear infinite;
 }
 
-#body {
-    height: 5rem;
-    width: 5rem; 
-    position: relative; 
-    left: 4.5em;
+#body{
+    height: var(--yoda_head_height);
+    width: var(--yoda_head_height);
+    position: relative;  
+    left: var(--yoda_offset_body);
+    z-index: 997;
+}
+
+#microphone {
+    height: var(--yoda_head_height);
+    width: var(--yoda_head_height);
+    position: relative;  
+    right: var(--yoda_offset_mic);
+    z-index: 999;
 }
  
 
 @keyframes move {
     0% {
-        top: 1.25rem;
+        top: 1.65rem;
     }
     50% {
         top: 2rem;
     }
     100% {
-        top: 1.25rem;
+        top: 1.65rem;
     }
 }
