@@ -46,7 +46,7 @@ body {
 .topnav { 
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100% ;
     position: absolute;
     text-align: center;
     padding: 2rem 2rem 2rem 2rem;
@@ -200,9 +200,9 @@ body {
     color:white;
 } 
 
-@media (max-width: 800px) { 
+@media only screen and (max-device-width: 800px) { 
     .topnav {  
-        min-width: 100%;
+        min-width: 100% ;
         display: grid;
         grid-template-columns: auto auto;   
         border-bottom: 0.1rem solid white;  
@@ -268,49 +268,115 @@ body {
     #translatedText{
         font-size: 2em;
     }
-} 
- 
-@media (max-width: 580px) { 
+}  
+
+@media only screen and (max-device-width: 600px) { 
     .topnav{
-        grid-template-columns: auto;   
+        width: 170%;
+    }
+
+    .topnav a{
+        font-size: 4rem; 
     }
 
     #yoda {
         position: absolute;
-        top: 30rem;
+        top: 30rem; 
+        left: 20rem;
         padding: 0 0 0 0;
     }
 
+    #microphone { 
+        top: -13rem;
+        left: -1rem;
+    }
+
     #floor {
-        top: 44rem;
-        left: -15rem;
+        top: 40rem;
+        left: 6rem;
     }
 
     #background{
-        left: -15rem;
-        top: 4rem;
+        left: 6rem;
+        top: 0rem;
     }
 
     #buttons{ 
-        top: 65rem;
-        left: 12%;
+        top: 60rem;
+        left: 50%;
     }
 
     #bubble{  
-        left: 0rem;  
+        left: 15rem;  
         padding-top: 10rem;  
         width: 35rem; 
     } 
     
     #text {    
         padding-top: 10.5rem;
-        left: 2rem;
+        left: 17rem;
         width: 15em;  
     } 
+}
+ 
+@media only screen and (max-device-width: 450px) { 
+    .topnav{
+        width: 200%;
+    } 
+
+    #yoda {  
+        left: 15rem; 
+    }
+
+    #microphone {  
+        left: 0rem;
+    }
+
+    #floor { 
+        left: 3rem;
+    }
+
+    #background{
+        left: 3rem; 
+    } 
+
+    #bubble{  
+        left: 13rem;   
+    } 
     
+    #text {     
+        left: 15rem; 
+    } 
 }
 
-/* --yoda_body_offset: 6rem;
---yoda_mic_offset: -12rem;
---yoda_head_offset: 5rem;
---floor_width: 50rem; */    
+@media only screen and (max-device-width: 400px) { 
+    .topnav{
+        width: 220%;
+    } 
+
+    #yoda {  
+        left: 10rem; 
+    } 
+
+    #floor { 
+        left: 0rem;
+    }
+
+    #background{
+        left: 0rem; 
+    } 
+
+    #bubble{  
+        left: 10rem;   
+    } 
+    
+    #text {     
+        left: 12rem; 
+    } 
+}
+
+@media only screen and (max-device-width: 300px) { 
+    .topnav{
+        width: 250%;
+    }  
+}
