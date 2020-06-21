@@ -2,7 +2,8 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="home.css">
-        <title>Example</title>
+        <title>Example</title>  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     
     <body> 
@@ -13,23 +14,33 @@
             <a href="#contact">API's</a>
             <a href="#about">About</a>
         </div>
-           
+
         <div id="yoda">
             <img id="head" src="images/yoda_head.png">
             <img id="body" src="images/yoda_body.png">
             <img id="microphone" src="images/yoda_mic.png">
         </div> 
+
         <div>
             <img id="floor" src="images/scene_floor.png">
         </div>
+
         <div>
-            <img id="background" src="images/background.jpg">
+            <img id="background" src="images/scene_background.png">
         </div>
-        <div>
-            <div id="text"> test aasdadasdasd</div>
+
+        <div id="text_bubble">
+            <div id="text" class="selectable"></div>
             <img id="bubble" src="images/bubble.png">
         </div>
-        
+
+        <div id="buttons">
+            <button id="like" class="button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>   
+            <button id="dislike" class="button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>  
+            <button id="showJoke" class="button" onclick="showJoke()">Next Joke</button> 
+            <div id="translatedText" class="selectable"></div> 
+            <button id="translate" class="button">Translate</button> 
+        </div> 
 
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
