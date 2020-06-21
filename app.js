@@ -1,7 +1,7 @@
 const express= require('express');
 const mongoose= require('mongoose');
 const bodyParser= require('body-parser'); 
-const PORT = 8000 || process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 //Connecting to db
 const DB_URL = 'mongodb+srv://cosmin0123:oxzJe52XtyO7hghR@jokescluster-oqxyy.mongodb.net/Yoda-App?retryWrites=true&w=majority'; 
