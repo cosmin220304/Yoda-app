@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 const yodaJokesRoutes = require('./routes/yodaJokesRoutes.js')(app)
 const homeRoutes = require('./routes/homeRoutes.js')(app)
+const topJokesRoutes = require('./routes/topJokesRoutes')(app)
 app.listen(PORT, ()=>{
 	console.log(`Server running at http://127.0.0.1:${PORT}`)
 }) 

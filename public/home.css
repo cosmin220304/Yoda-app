@@ -191,14 +191,53 @@ body {
     color: white;
 }
 
+#content{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
 #top3{
-    position: absolute;
-    top: 25rem;
-    right: 15rem;  
-    width: 12rem;
-    height: 2rem;  
+    font-size: 1.15rem;
+    position: relative;
+    top: 10rem;  
+    width: 90%;
+    height: 25rem;  
     color:white;
-} 
+    background-color: #2f4353;
+    background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
+    border-radius: 2em;
+    border: 0.2rem solid #263744;
+    text-align: center; 
+}  
+
+#content_top3{
+    margin: 1em 1em 1em 1em;
+    height: 23rem;  
+    border-radius: 2em;
+    background-color:#222; 
+    color: lightgreen; 
+    border: 0.2rem solid rgb(26, 26, 26);
+}
+
+#top3_btn {
+    margin-top: 7rem;
+    display: flex;
+    order: auto auto;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-device-width: 1090px) { 
+    #content{ 
+        display: flex;
+        flex-direction: column; 
+        order: 1;
+        flex-wrap: wrap;
+    }
+    #top3{
+        top: -35rem;  
+        left: 10%;
+    }
+}
 
 @media only screen and (max-device-width: 800px) { 
     .topnav {  
@@ -268,6 +307,18 @@ body {
     #translatedText{
         font-size: 2em;
     }
+
+    #top3{
+        top: -5rem;   
+        left: 5%;
+    }
+
+    #top3_btn {
+        margin-top: 5rem;
+        display: flex;
+        order: auto auto;
+        justify-content: space-evenly;
+    }
 }  
 
 @media only screen and (max-device-width: 600px) { 
@@ -317,6 +368,20 @@ body {
         left: 17rem;
         width: 15em;  
     } 
+
+    #top3{
+        font-size: 1.25rem;
+        top: 40rem;   
+        left: 15%; 
+        width: 150%;
+    }
+
+    #top3_btn {
+        margin-top: 4rem;
+        display: flex;
+        order: auto auto;
+        justify-content: space-evenly;
+    }
 }
  
 @media only screen and (max-device-width: 450px) { 
@@ -347,6 +412,20 @@ body {
     #text {     
         left: 15rem; 
     } 
+
+    #top3{ 
+        font-size: 1.5rem;
+        top: 40rem;   
+        left: 15%; 
+        width: 200%;
+    }
+
+    #top3_btn {
+        margin-top: 1rem;
+        display: flex;
+        order: auto auto;
+        justify-content: space-evenly;
+    }
 }
 
 @media only screen and (max-device-width: 400px) { 

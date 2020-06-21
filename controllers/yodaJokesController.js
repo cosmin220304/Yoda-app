@@ -62,15 +62,15 @@ const controller = {
                 .then(res =>  resolve( [res.data.value, res.data.id] ))
             ) 
 
-            const yodaJoke = await new Promise ( (resolve, reject) => 
+            let yodaJoke = await new Promise ( (resolve, reject) => 
                 axios.post("https://api.funtranslations.com/translate/yoda.json", { "text" : chuckJoke } )
-                .then( res => resolve(res.data.contents.translated))
-                .catch( reject ) 
+                .then( res => {console.log(res.data);resolve(res.data.contents.translated)}) 
+                .catch( reject)
             )
-
+             
             yodaJoke = yodaJoke.replace("chuck", "Chuck")
             yodaJoke = yodaJoke.replace("norris", "Norris")
-            yodaJoke += "."
+            yodaJoke += "." 
 
             //Add the joke to the db 
             Jokes.create(
@@ -80,7 +80,7 @@ const controller = {
                     score: 0
                 },
                 (err, data) => sendResponse(res, err, data)
-            ) 
+            )  
         }
         catch(e){    
             res.json({ success: false, message: "Couldn't get joke at the moment" })

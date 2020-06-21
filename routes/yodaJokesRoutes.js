@@ -1,4 +1,4 @@
-const yodaJokesController = require('../controllers/yodaJokesController'); 
+const yodaJokesController = require('../controllers/yodaJokesController')
 module.exports = app => {
     app.get('/randomJoke', yodaJokesController.getRandomJoke),
     app.get('/jokes', yodaJokesController.getAllJokes),

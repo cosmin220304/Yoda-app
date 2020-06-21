@@ -16,7 +16,8 @@ const upAndDown = (el, percent_distance, speed) => {
 }  
 
 const playRandomYodaSound = () => {
-    const randInt = parseInt(Math.random() * 2) + 1
+    const randInt = parseInt(Math.random() * 3)
+    console.log(randInt)
     sounds[randInt].play()
 }
 
