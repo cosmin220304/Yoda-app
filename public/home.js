@@ -80,18 +80,20 @@ const translateJoke = () => {
 }
 
 const like = (msg) => { 
-    let this_button, other_button, other_btn_color
+    let this_button, other_button, other_btn_color, soundToPlay
 
     // We want to color the buttons for feedback
     if (msg == "like") {
         this_button= $("#like")
         other_button = $("#dislike") 
-        other_btn_color = "rgb(124, 41, 41)";
+        other_btn_color = "rgb(124, 41, 41)"
+        soundToPlay = applause
     }
     else {
         this_button= $("#dislike")
         other_button = $("#like") 
-        other_btn_color = "rgb(1, 56, 1)";  
+        other_btn_color = "rgb(1, 56, 1)"
+        soundToPlay = boo
     } 
 
     // User can't upvote a joke that we did not see yet
@@ -109,8 +111,10 @@ const like = (msg) => {
             // In other words, we let the user upvote again
             if (other_button.css("background-color") == "rgb(255, 255, 255)")
                 other_button.css("background-color", other_btn_color)
-            else
+            else{
                 this_button.css("background-color", "rgb(255, 255, 255)")  
+                soundToPlay.play()
+            }
         }
     });
 }
@@ -139,4 +143,4 @@ $( document ).ready(function() {
     applause.setAttribute('src', "/sounds/Applause.mp3")
     jokeEnd.setAttribute('src', "/sounds/Ba Dum Tss.mp3")
     boo.setAttribute('src', "/sounds/Boo.mp3")
-}) 
+})  

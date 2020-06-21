@@ -2,7 +2,7 @@
     --yoda_head_height: 12rem;
     --yoda_head_width: 24rem;
     --yoda_body_offset: 6rem;
-    --yoda_mic_offset: 12rem;
+    --yoda_mic_offset: -12rem;
     --yoda_head_offset: 5rem;
     --floor_width: 50rem;
 }
@@ -53,7 +53,7 @@ body {
     border-bottom: 0.1rem solid white; 
     background: rgb(66,2,2);
     background: linear-gradient(90deg, rgba(66,2,2,1) 0%, rgba(203,0,0,1) 50%, rgba(66,2,2,1) 100%);
-    z-index: 999;
+    z-index: 999;  
 }  
 .topnav * {
     box-sizing: border-box;
@@ -85,7 +85,7 @@ body {
     height: var(--yoda_head_height);
     width: var(--yoda_head_height);
     position: relative; 
-    right: var(--yoda_mic_offset);
+    left: var(--yoda_mic_offset);
     z-index: 3;
 }
 /* END Yoda */
@@ -155,6 +155,7 @@ body {
     cursor: pointer;
     border: 1px solid white;
     margin-bottom: 1rem;
+    z-index: 999;
 }
 
 .button:hover {
@@ -190,14 +191,25 @@ body {
     color: white;
 }
 
-@media only screen and (max-width: 850px) { 
-    .topnav {
+#top3{
+    position: absolute;
+    top: 25rem;
+    right: 15rem;  
+    width: 12rem;
+    height: 2rem;  
+    color:white;
+} 
+
+@media (max-width: 800px) { 
+    .topnav {  
+        min-width: 100%;
         display: grid;
-        grid-template-columns: auto auto; 
+        grid-template-columns: auto auto;   
+        border-bottom: 0.1rem solid white;  
     }
 
     #buttons{ 
-        top: 50rem;
+        top: 55rem;
         left: 25%;  
         width: 24rem;
         height: 4rem; 
@@ -208,7 +220,7 @@ body {
         height: 5rem; 
         font-size: 2.5rem; 
         border-radius: 4em;   
-        border: 2px solid white;
+        border: 1px solid white;
         margin-bottom: 2rem;
     }
 
@@ -217,39 +229,88 @@ body {
         height: 5rem;
     }
 
+    #yoda { 
+        padding-top: 20rem; 
+        padding-left: 10rem;
+    }
+
+    #microphone { 
+        top: 0rem;
+        left: -12rem;
+    }
+ 
+    #floor { 
+        top: -10rem;
+        left: -3rem;  
+    }
+
+    #background { 
+        top: -50rem;
+        left: 0rem; 
+    }
+
+    #bubble{ 
+        height: 15rem;
+        width: 38rem; 
+        left: 4rem;  
+        padding-top: 0rem; 
+        content: url(images/bubble2.png);
+    } 
+    
+    #text {   
+        font-size: 1.75em;
+        height: 6.5em;
+        width: 18em;
+        padding-top: 0.5rem;
+        left: 6rem;  
+    } 
+    
+    #translatedText{
+        font-size: 2em;
+    }
+} 
+ 
+@media (max-width: 580px) { 
+    .topnav{
+        grid-template-columns: auto;   
+    }
+
     #yoda {
-        /* padding-left: 10rem; */
-        padding-top: 20rem;
-        display: inline-block;
+        position: absolute;
+        top: 30rem;
+        padding: 0 0 0 0;
     }
 
-    #head {
-        height: var(--yoda_head_height);
-        width: var(--yoda_head_width);
-        display: block;
-        position: relative;
-        z-index: 2;
-        top: var(--yoda_head_offset)
+    #floor {
+        top: 44rem;
+        left: -15rem;
     }
-    #body {
-        height: var(--yoda_head_height);
-        width: var(--yoda_head_height);
-        position: relative;
-        left: var(--yoda_body_offset);
-        z-index: 1;
+
+    #background{
+        left: -15rem;
+        top: 4rem;
     }
-    #microphone {
-        height: var(--yoda_head_height);
-        width: var(--yoda_head_height);
-        position: relative; 
-        right: var(--yoda_mic_offset);
-        z-index: 3;
+
+    #buttons{ 
+        top: 65rem;
+        left: 12%;
     }
+
+    #bubble{  
+        left: 0rem;  
+        padding-top: 10rem;  
+        width: 35rem; 
+    } 
+    
+    #text {    
+        padding-top: 10.5rem;
+        left: 2rem;
+        width: 15em;  
+    } 
+    
 }
 
-@media only screen and (max-width: 600px) { 
-    .topnav {
-        display: grid;
-        grid-template-columns: auto; 
-    }
-}
+/* --yoda_body_offset: 6rem;
+--yoda_mic_offset: -12rem;
+--yoda_head_offset: 5rem;
+--floor_width: 50rem; */    
