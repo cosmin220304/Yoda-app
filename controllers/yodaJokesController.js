@@ -86,7 +86,7 @@ const controller = {
             res.json({ success: false, message: "Couldn't get joke at the moment" })
         } 
     },
-    addLike: (req, res) => { 
+    vote: (req, res) => { 
         let value = 0 
         const BAD_REQUEST_MESSAGE = "please provide json similar to this: \{\"message\" : \"like/dislike\"\}" 
 
@@ -108,4 +108,4 @@ const controller = {
         }
     }
 }
-module.exports = controller;
+module.exports = controller

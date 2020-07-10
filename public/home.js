@@ -58,7 +58,7 @@ const showJoke = async () => {
     $("#dislike").css("background-color", "rgb(124, 41, 41)")
     $("#translatedText").text("")
 
-    const spareJoke = await getDataFromServer("/randomJoke") 
+    const spareJoke = await getDataFromServer("/jokes/random") 
     const yodaJoke = await getDataFromServer("/newJoke")
     
     if (yodaJoke.data === undefined){ 
